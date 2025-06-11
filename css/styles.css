@@ -1,14 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 :root {
   --fuente-logo: "Great Vibes", cursive;
   --fuente-texto: "Poppins", sans-serif;
 }
 
-html {
-  font-family: var(--fuente-texto) !important;
-}
-
+html,
 body {
   font-family: var(--fuente-texto);
   margin: 0;
@@ -18,57 +16,75 @@ body {
 header {
   background: transparent;
   text-align: center;
-  padding: 10px;
 }
 
-.logo {
-  font-family: var(--fuente-logo);
-  font-size: 3rem;
-  padding: 0px;
-  margin: 0px;
+.navbar-brand {
+  font-family: var(--fuente-texto);
+  font-size: 1.5rem;
   color: #361a14;
 }
 
-.categorias {
-  display: flex;
-  justify-content: space-between;
-  margin: auto;
-  width: 80%;
-  align-items: flex-end;
+main {
+  padding-top: 62px; /* ajustá según la altura del navbar */
 }
 
-.categorias div {
-  display: flex;
-  gap: 50px;
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white; /* o el color que prefieras */
+  z-index: 1000; /* para que quede encima del contenido */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* sombra opcional */
 }
 
-.categorias button {
-  background: transparent;
-  border: 2px solid transparent;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  transition: 0.3s;
+/* Vistas SPA */
+.vista {
+  display: none;
+}
+.vista.activa {
+  display: block;
 }
 
-.contenedor-plantillas {
+/* Sección de inicio */
+#inicio {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  padding: 2rem;
   justify-content: center;
+  align-items: center;
+  background-color: #fbf6f1;
+  gap: 100px;
+  padding: 30px 0px;
+  min-height: 100vh;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
 }
 
-.inicio {
+.inicio-izquierda {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  margin: auto;
+  width: 60%;
+  text-align: start;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
 }
 
+.inicio-izquierda h2 {
+  font-size: 2.3rem;
+}
+
+.inicio-derecha img {
+  width: 300px;
+  border-radius: 50px 0px 50px 0px;
+  filter: blur(0.1px);
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.4); /* sombra pareja en todos los lados */
+  object-fit: cover;
+}
+
+/* Estilo botón WhatsApp */
 .btn-whatsapp {
   display: inline-block;
-  background-color: #25d366; /* verde WhatsApp */
+  background-color: #c67549;
   color: white;
   padding: 12px 24px;
   text-decoration: none;
@@ -79,9 +95,29 @@ header {
 }
 
 .btn-whatsapp:hover {
-  background-color: #1ebe57;
+  background-color: #994d35;
 }
 
+/*Social Icons*/
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+  width: 25px;
+  border-radius: 20px;
+  background-color: #deb593;
+}
+
+/* Tarjetas de plantillas */
 .plantilla {
   background: white;
   border: 1px solid #ddd;
@@ -98,6 +134,7 @@ header {
   object-fit: cover;
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 1rem;
